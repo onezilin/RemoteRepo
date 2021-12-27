@@ -111,4 +111,6 @@ git config --global --unset user.email
 
 #### 13、【git checkout -b 分支名】
 
-创建一条分支，并切换到分支上。相当于【`git branch 分支名`+`git checkout 分支名`】，使用`git branch`查看所有分支及当前HEAD所在的分支
+创建一条分支，并切换到分支上。相当于【`git branch 分支名`+`git checkout 分支名`】，使用`git branch`查看所有分支及当前HEAD所在的分支
+
+14、
