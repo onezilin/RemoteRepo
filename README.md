@@ -46,3 +46,65 @@
 相当于【`rm 文件名` + `git add 文件名`】或【`rm 文件名` + `git rm 文件名`】（直接git rm不香吗）的组合，会直接删除指定文件
 
 注意： 只对已跟踪的文件有效
+
+#### 9、【git remote 指令】
+
+当先创建本地仓库，后创建远程仓库时，使用`git remote`将本地仓库和远程仓库关联，可以进行`push`/`pull`将本地仓库和远程仓库进行同步的操作
+
+##### 9.1、【git remote add 远程仓库名 远程仓库url】
+
+值远程仓库取仓库名（一般为origin），将远程仓库url和本地仓库关联。可以添加多个远程仓库（取不一样的远程仓库名就可以），本地仓库关联多个远程仓库，可以分别进行`push`/`pull`
+
+##### 9.2、【git remote rm 远程仓库名】
+
+删除本地仓库和指定远程仓库的关联（不会删除远程仓库，只是删除关联关系）
+
+##### 9.3、【git remote set-url --add 远程仓库名 远程仓库url】
+
+使用`git remote add 远程仓库名 远程仓库url`可以为本地仓库关联多个远程仓库，但是`push`只能推送给一个远程仓库名对应的远程仓库url。例如：每一个仓库名对应一个远程仓库url，我要给十个远程仓库推送，就要push十次。
+
+使用【git remote set-url -add 远程仓库名 远程仓库url】可以给一个远程仓库名添加多个对应的url，`push`推送给一个远程仓库名对应的远程仓库url。例如：每一个仓库名对应十个远程仓库url，我要给十个远程仓库推送，只需要push一次。
+
+注意：虽然一个远程仓库名能对应多个远程仓库url，能同时`push`到多个远程仓库，但是`pull`只会从第一个远程仓库url拉取
+
+##### 9.4、【git remote set-url --delete 远程仓库名 远程仓库url】
+
+删除指定远程仓库名的指定远程仓库url
+
+##### 9.5、【git remote set-url 远程仓库名 旧的远程仓库url 新的远程仓库url】
+
+修改指定远程仓库名的指定远程仓库url
+
+##### 9.6、【git remote -v】
+
+查看本地仓库和远程仓库的关联情况
+
+#### 10、【git clone 远程仓库url】
+
+当先创建远程仓库时，可以将远程仓库克隆到本地，这样直接就产生关联
+
+#### 11、【git config [--global | --local] 配置名 配置值 】
+
+为git设置一些配置，【--globe】表示这配置全局仓库都会使用，【--local】表示这配置只针对当前仓库。
+
+例如：
+
+// 添加配置
+
+git config --global user.name "我的名字"
+
+git config --global user.email "我的邮箱"
+
+// 删除配置
+
+git config --global --unset user.name 
+
+git config --global --unset user.email
+
+注意：user.name和user.email只是当前git用户的名字（用于表示推送人的名称）和邮箱（用于联系），不一定需要和远程仓库的用户名和邮箱一致（虽然一般来说都一样）
+
+#### 12、【ssh-keygen -t rsa -C "备注"】
+
+用于生成密钥（其实这不是git的指令），将公钥添加到远程仓库，便可以进行`push`操作
+
+注意：【-C "备注"】其实是这个密钥的备注，一般来说都是远程仓库的邮箱
