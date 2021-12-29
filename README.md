@@ -143,3 +143,4 @@ git config --global --unset user.email
 
 缺点：删除分支时需要使用`git branch -D 分支名`强制删除；不会保留一点对分支的引用，删除后就完全看不到分支信息，只看得到这次合并的提交点。
 
+我在dev上干活
