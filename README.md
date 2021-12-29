@@ -124,3 +124,6 @@ git config --global --unset user.email
 优点：合并快，只需要把master指针右移就行
 
 缺点：删除分支时，会丢失分支信息（合并后删除分支，看不出来合并过）；由于只是master指针移动，会把分支的提交记录合并到master分支，污染master分支
+
+`--no-ff` 关闭fast-forward，
+
