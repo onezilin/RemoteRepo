@@ -113,4 +113,6 @@ git config --global --unset user.email
 
 创建一条分支，并切换到分支上。相当于【`git branch 分支名`+`git checkout 分支名`】，使用`git branch`查看所有分支及当前HEAD所在的分支
 
-#### 14、
+#### 14、【git merge [--ff | --no-ff | --squash] [-m "说明"] 分支名】
+
+用于将指定分支合并到当前分支上（不会删除指定分支）
