@@ -109,11 +109,23 @@ git config --global --unset user.email
 
 注意：【-C "备注"】其实是这个密钥的备注，一般来说都是远程仓库的邮箱
 
-#### 13、【git checkout -b 分支名】
+#### 13、【git branch】
 
-创建一条分支，并切换到分支上。相当于【`git branch 分支名`+`git checkout 分支名`】，使用`git branch`查看所有分支及当前HEAD所在的分支
+使用`git branch`查看所有分支及当前HEAD所在的分支
 
-#### 14、【git merge [--ff | --no-ff | --squash] -m "说明" 分支名】
+##### 13.1、【git branch 分支名】
+
+创建一个分支
+
+##### 13.2、【git branch [-d |-D] 分支名】
+
+删除指定分支，当分支没有合并到当前分支时，需要使用【-D】强制删除
+
+#### 14、【git checkout -b 分支名】
+
+创建一条分支，并切换到分支上。相当于【`git branch 分支名`+`git checkout 分支名`】
+
+#### 15、【git merge [--ff | --no-ff | --squash] -m "说明" 分支名】
 
 用于将指定分支合并到当前分支上（不会删除指定分支）
 
@@ -131,6 +143,3 @@ git config --global --unset user.email
 
 缺点：删除分支时需要使用`git branch -D 分支名`强制删除；不会保留一点对分支的引用，删除后就完全看不到分支信息，只看得到这次合并的提交点。
 
-我master修改了
-
-我squash提交了
