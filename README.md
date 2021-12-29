@@ -127,3 +127,4 @@ git config --global --unset user.email
 
 `--no-ff` 关闭fast-forward，合并时需要写【-m "说明"】，没有`--ff`的缺点
 
+`--squash` 把一些不必要的commit进行压缩，例如：当前分支开发时commit很乱，在合并时不希望把这些历史commit带过来，于是使用`--squash`进行合并，此时文件已经同合并后一样了，但是不移动HEAD，不提交。需要进行一次额外的commit来"总结"一下，然后完成最终的合并。
