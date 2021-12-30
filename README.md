@@ -143,3 +143,26 @@ git config --global --unset user.email
 
 缺点：删除分支时需要使用`git branch -D 分支名`强制删除；不会保留一点对分支的引用，删除后就完全看不到分支信息，只看得到这次合并的提交点。
 
+#### 16、【git stash】
+
+当暂存区、工作区中有内容时，需要切换到另外一个分支（切换到其他分支时，暂存区、工作区中不能有内容），使用`git stash`将暂存区、工作区的内容存储起来，同时恢复到最近的一次commit。
+
+##### 16.1、【git stash list】
+
+查看存储的stash名称（stash数字越小表示越新）和存储时的commit版本
+
+注意：其他分支stash的内容也可以看到
+
+##### 16.2、【git stash apply stash名】
+
+将存储的stash内容恢复到工作区
+
+注意：只能恢复当前分支存储的stash内容，恢复其他分支stash内容时会报错
+
+##### 16.3、【git stash drop stash名】
+
+删除指定的stash内容
+
+##### 16.4、【git stash pop】
+
+相当于【`git stash apply stash@{0}`+`git stash drop stash@{0}`】，将最新的stash恢复到工作区，同时删除这条stash内容，推荐用这个
