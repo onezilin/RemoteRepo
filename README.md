@@ -111,7 +111,7 @@ git config --global --unset user.email
 
 #### 13、【git branch】
 
-使用`git branch`查看所有分支及当前HEAD所在的分支
+使用`git branch`查看所有分支及当前HEAD所在的分支，`git branch -a`查看本地分支和远程仓库分支
 
 ##### 13.1、【git branch 分支名】
 
@@ -173,4 +173,5 @@ git config --global --unset user.email
 
 注意：合并的不是分支而是提交节点的版本内容
 
-啊啊啊啊，用`git stash`
+#### 18、【git push】
+
