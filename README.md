@@ -165,4 +165,11 @@ git config --global --unset user.email
 
 ##### 16.4、【git stash pop】
 
-相当于【`git stash apply stash@{0}`+`git stash drop stash@{0}`】，将最新的stash恢复到工作区，同时删除这条stash内容，推荐用这个
+相当于【`git stash apply stash@{0}`+`git stash drop stash@{0}`】，将最新的stash恢复到工作区，同时删除这条stash内容，推荐用这个
+
+#### 17、【git cherry-pick 版本号】
+
+将指定的版本号的commit提交合并到当前分支
+
+注意：合并的不是分支而是提交节点的版本内容
+
