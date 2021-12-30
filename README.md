@@ -190,3 +190,5 @@ git config --global --unset user.email
 删除远程仓库的指定分支
 
 ##### 18.3、【git check -b  本地分支名 远程仓库名/远程分支名】
+
+将远程仓库的分支拉取到本地，并取名为本地分支名
