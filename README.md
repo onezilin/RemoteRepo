@@ -10,6 +10,14 @@
 
 将暂存区文件添加提交到git仓库进行版本管理
 
+##### 3.1、【git commit --amend】
+
+修改最近一次commit的提交说明，原理是：创建一个新的commit，再让HEAD重新指向这个新的commit。
+
+情景1：当我们完成一次commit时，但还没有推送到公共的分支。发现commit的提交说明写的不够好，想修改，可以使用`git commit --amend`进入vim操作页面修改
+
+情景2：当我们完成一次commit时，但已经推送到远程仓库，再次执行`git push`就会被拒绝（因为这是一个新的commit）。如果是私人的分支：可以直接`git push -f`强制推送；如果是公共分支：先`git pull`再`git push`（推荐）。
+
 #### 4、【git log [--oneline] [--graph]】
 
 查看提交的版本，`--oneline`相当于`--pretty=oneline --abbrev-commit`，表示输出格式为一行并且只展示版本的前几位
